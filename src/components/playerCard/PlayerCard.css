@@ -1,0 +1,54 @@
+
+.player_card {
+  display: inline-block;
+  position: relative;
+  width: 36px;
+  margin-right: 8px;
+  border-radius: var(--border-radius);
+  filter: drop-shadow(0px 4px 3px rgba(0, 26, 56, 0.5));
+  transition: width 300ms ease-in-out, transform 500ms ease-in-out 200ms, margin 300ms ease-in-out;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.player_card:hover,
+.player_card.selected {
+  width: calc(68px + 8px + 8px);
+  transform: scale(1.1);
+}
+
+.player_card:not(:first-child):not(:last-child):hover,
+.player_card:not(:first-child):not(:last-child).selected { margin-left: 32px; }
+
+.player_card.active { z-index: 2; }
+
+.player_card .image,
+.player_card .position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 68px;
+  padding: 0 8px;
+}
+
+.player_card .image {
+  align-items: flex-end;
+  padding-top: 8px;
+  background-color: var(--bg-color-shade);
+  border-top-left-radius: var(--border-radius);
+  border-top-right-radius: var(--border-radius);
+}
+
+.player_card .image svg {
+  width: 32px;
+  height: 32px;
+  margin-left: 2px;
+  fill: var(--text-color)
+}
+
+.player_card .position {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-bottom-left-radius: var(--border-radius);
+  border-bottom-right-radius: var(--border-radius);
+}

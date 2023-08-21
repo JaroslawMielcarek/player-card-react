@@ -1,0 +1,38 @@
+.player-details {
+  display: grid;
+  grid-template-areas:
+    " details image"
+    " statistics statistics";
+  grid-template-columns: 2fr 1fr;
+  column-gap: 8px;
+  row-gap: 8px;
+  max-height: 90vh;
+}
+
+.player-details .image {
+  grid-area: image;
+  height: 150px;
+  width: 100px;
+  justify-self: center;
+}
+
+.player-details .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+}
+
+.player-details .details,
+.player-details .statistics { padding: 4px 8px; }
+
+.player-details .details {
+  grid-area: details;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 16ch;
+}
+
+.player-details .details h3 { align-self: center; margin-top: 0; }
+.player-details .details span { color: var(--text-accent); }
+.player-details .statistics { grid-area: statistics; }
